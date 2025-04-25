@@ -23,3 +23,19 @@ const scrollRevealOption = {
   duration: 1000,
 };
 
+ScrollReveal().reveal(".header__content h1", {
+  ...scrollRevealOption,
+});
+ScrollReveal().reveal(".header__content .section__description", {
+  ...scrollRevealOption,
+  delay: 500,
+});
+ScrollReveal().reveal(".header__content form", {
+  ...scrollRevealOption,
+  delay: 1000,
+});
+ScrollReveal().reveal(".header__content img", {
+  ...scrollRevealOption,
+  origin: "left",
+  delay: 1500,
+});
