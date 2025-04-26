@@ -234,3 +234,53 @@ nav {
   background-color: var(--primary-color);
 }
 
+.about {
+  background-color: var(--extra-light);
+  overflow: hidden;
+}
+
+.about__container {
+  display: grid;
+  gap: 2rem;
+}
+
+.about__image {
+  position: relative;
+  isolation: isolate;
+  max-width: 450px;
+  margin-inline: auto;
+}
+
+.about__image img {
+  border: 0.75rem solid var(--white);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.about__image::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  transform: rotate(8deg);
+  z-index: -1;
+}
+
+.about__content .section__header {
+  margin-bottom: 1rem;
+}
+
+.about__content .section__header span {
+  color: var(--primary-color);
+}
+
+.about__signature {
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+  text-align: center;
+}
