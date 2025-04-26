@@ -39,3 +39,15 @@ ScrollReveal().reveal(".header__content img", {
   origin: "left",
   delay: 1500,
 });
+
+ScrollReveal().reveal(".about__content .section__header", {
+  ...scrollRevealOption,
+});
+ScrollReveal().reveal(".about__content .section__description", {
+  ...scrollRevealOption,
+  delay: 500,
+});
+ScrollReveal().reveal(".about__signature", {
+  ...scrollRevealOption,
+  delay: 1000,
+});
