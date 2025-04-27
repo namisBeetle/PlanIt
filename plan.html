@@ -52,6 +52,30 @@
           <button type="submit" id="searchBtn">Search Hotels</button>
         </form>
       </div>
-  <script src="plan.js"></script>
+      
+      <div class="results-section" id="resultsSection">
+        <h2>Available Hotels</h2>
+        <p class="results-info">Complete the form and click "Search Hotels" to see available options</p>
+        <div class="hotel-list" id="hotelList">
+          <!-- Hotel cards will be dynamically inserted here -->
+        </div>
+      </div>
+    </section>
+    
+    <div id="bookingConfirmation" class="booking-confirmation">
+      <div class="confirmation-content">
+        <span class="close-btn" id="closeConfirmation">&times;</span>
+        <h2>Booking Confirmed!</h2>
+        <p>Your trip to <span id="confirmDestination"></span> has been booked.</p>
+        <p>Check-in: <span id="confirmCheckin"></span></p>
+        <p>Check-out: <span id="confirmCheckout"></span></p>
+        <p>Hotel: <span id="confirmHotel"></span></p>
+        <p>Price: ₹<span id="confirmPrice"></span></p>
+        <button id="newSearchBtn">Plan Another Trip</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="plan2.js"></script>
 </body>
 </html>
