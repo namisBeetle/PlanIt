@@ -284,3 +284,52 @@ nav {
   color: var(--text-dark);
   text-align: center;
 }
+
+.tour__grid {
+  margin-block: 2rem;
+  display: grid;
+  gap: 0 1rem;
+}
+
+.tour__card {
+  padding: 2rem 1rem;
+  transition: 0.3s;
+  border-radius: 1rem;
+}
+
+.tour__card:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.tour__card img {
+  max-width: 125px;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+  border-radius: 10rem;
+}
+
+.tour__card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.tour__card p {
+  font-weight: 500;
+  color: var(--text-light);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.tour__card:hover p {
+  color: var(--primary-color);
+}
+
+.tour__btn {
+  display: flex;
+  justify-content: center;
+}
+
+
