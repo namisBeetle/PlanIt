@@ -79,3 +79,72 @@ header p {
     color: var(--text-gray);
     opacity: 0.9;
 }
+
+/* Trip Planner Section */
+.trip-planner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Search Form Redesign */
+.search-form {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.search-form h2 {
+    font-size: 2rem;
+    color: #2D3748;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.search-form:hover {
+    background: rgba(26, 26, 26, 0.9);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.form-group:hover {
+    transform: translateY(-2px);
+    animation: formFloat 2s ease infinite;
+}
+
+/* Label Styling */
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Active state styling */
+.form-group.active label {
+    color: var(--accent);
+    transform: translateY(-5px);
+}
+
+.form-group.active input {
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(99, 179, 237, 0.2);
+}
