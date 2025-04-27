@@ -51,3 +51,7 @@ ScrollReveal().reveal(".about__signature", {
   ...scrollRevealOption,
   delay: 1000,
 });
+ScrollReveal().reveal(".tour__card", {
+  ...scrollRevealOption,
+  interval: 500,
+});
