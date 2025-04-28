@@ -231,3 +231,9 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 .input-with-icon {
     padding-left: 45px !important;
 }
+
+@keyframes formFloat {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
