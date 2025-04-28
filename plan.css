@@ -237,3 +237,21 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
     50%  { transform: translateY(-5px); }
     100% { transform: translateY(0); }
 }
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* Label Styling */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-light);
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+}
