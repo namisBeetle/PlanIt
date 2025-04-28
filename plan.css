@@ -505,3 +505,18 @@ button:hover {
                      0 0 15px var(--primary);
     }
 }
+
+@media (max-width: 768px) {
+    .trip-planner {
+        flex-direction: column;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .hotel-list {
+        grid-template-columns: 1fr;
+    }
+}
