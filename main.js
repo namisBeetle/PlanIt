@@ -55,3 +55,7 @@ ScrollReveal().reveal(".tour__card", {
   ...scrollRevealOption,
   interval: 500,
 });
+ScrollReveal().reveal(".destination__card", {
+  ...scrollRevealOption,
+  interval: 500,
+});
