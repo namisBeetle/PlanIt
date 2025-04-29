@@ -539,3 +539,25 @@ nav {
   justify-content: center;
 }
 
+.banner {
+  overflow: hidden;
+}
+
+.banner__wrapper {
+  width: max-content;
+  display: flex;
+  align-items: center;
+
+  animation: scroll-left 45s linear infinite;
+}
+
+.banner__wrapper img {
+  max-width: 300px;
+}
+
+@keyframes scroll-left {
+  to {
+    transform: translateX(calc(-50%));
+  }
+}
+
