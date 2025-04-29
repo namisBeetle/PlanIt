@@ -737,4 +737,23 @@ nav {
   }
 }
 
+@media (width > 1024px) {
+  .tour__grid {
+    gap: 1.5rem;
+  }
+
+  .destination__grid {
+    gap: 1.5rem;
+  }
+
+  .blog__grid {
+    gap: 1.5rem;
+  }
+
+  .blog__content {
+    padding: 1.5rem;
+    padding-bottom: 2rem;
+  }
+}
+
 
