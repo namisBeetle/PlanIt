@@ -614,4 +614,22 @@ nav {
   text-align: center;
 }
 
+@media (width > 540px) {
+  .header__content form {
+    flex-direction: row;
+  }
+
+  .tour__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .destination__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blog__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 
