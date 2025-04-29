@@ -66,3 +66,12 @@ ScrollReveal().reveal(".blog__card", {
   ...scrollRevealOption,
   interval: 500,
 });
+
+const banner = document.querySelector(".banner__wrapper");
+const bannerImages = Array.from(banner.children);
+
+bannerImages.forEach((item) => {
+  const duplicateNode = item.cloneNode(true);
+  duplicateNode.setAttribute("aria-hidden", true);
+  banner.appendChild(duplicateNode);
+});
