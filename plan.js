@@ -123,3 +123,24 @@ function showBookingConfirmation(destination, checkin, checkout, hotelName, pric
 
   bookingConfirmation.style.display = 'flex';
 }
+
+// Close confirmation popup
+closeConfirmation.addEventListener('click', function() {
+  bookingConfirmation.style.display = 'none';
+});
+
+// New search button
+newSearchBtn.addEventListener('click', function() {
+  bookingConfirmation.style.display = 'none';
+  tripForm.reset();
+  priceDisplay.textContent = priceRange.value;
+  hotelList.innerHTML = '';
+  resultsInfo.textContent = 'Complete the form and click "Search Hotels" to see available options';
+});
+
+// Close popup when clicking outside
+bookingConfirmation.addEventListener('click', function(e) {
+  if (e.target === bookingConfirmation) {
+    bookingConfirmation.style.display = 'none';
+  }
+});
