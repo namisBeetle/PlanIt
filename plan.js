@@ -106,3 +106,20 @@ function displayHotels(hotels, destination, checkin, checkout, guests) {
     });
   });
 }
+
+// Show booking confirmation popup
+function showBookingConfirmation(destination, checkin, checkout, hotelName, price) {
+  const checkinDate = new Date(checkin);
+  const checkoutDate = new Date(checkout);
+
+  const formattedCheckin = checkinDate.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+  const formattedCheckout = checkoutDate.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+
+  document.getElementById('confirmDestination').textContent = destination;
+  document.getElementById('confirmCheckin').textContent = formattedCheckin;
+  document.getElementById('confirmCheckout').textContent = formattedCheckout;
+  document.getElementById('confirmHotel').textContent = hotelName;
+  document.getElementById('confirmPrice').textContent = price;
+
+  bookingConfirmation.style.display = 'flex';
+}
