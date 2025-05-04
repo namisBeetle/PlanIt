@@ -57,3 +57,52 @@ tripForm.addEventListener('submit', function(e) {
 
   displayHotels(filteredHotels, destination, checkin, checkout, guests);
 });
+
+// Display hotels in the results section
+function displayHotels(hotels, destination, checkin, checkout, guests) {
+  hotelList.innerHTML = '';
+
+  if (hotels.length === 0) {
+    resultsInfo.textContent = `No hotels found within your budget for ${destination}. Try increasing your price range.`;
+    return;
+  }
+
+  resultsInfo.textContent = `Showing ${hotels.length} hotels in ${destination} for ${guests} guests`;
+
+  const nights = Math.round((new Date(checkout) - new Date(checkin)) / (1000 * 60 * 60 * 24));
+
+  hotels.forEach(hotel => {
+    const totalPrice = hotel.price * nights;
+
+    const hotelCard = document.createElement('div');
+    hotelCard.className = 'hotel-card';
+
+    hotelCard.innerHTML = `
+      <div class="hotel-image" style="background-image: url('${hotel.image}')"></div>
+      <div class="hotel-info">
+        <div class="hotel-name">${hotel.name}</div>
+        <div class="hotel-price">₹${hotel.price} per night</div>
+        <div class="hotel-rating">
+          ${'★'.repeat(Math.floor(hotel.rating))}${hotel.rating % 1 >= 0.5 ? '½' : ''}
+          <span style="color: #777">(${hotel.rating})</span>
+        </div>
+        <div class="hotel-total">Total for ${nights} nights: <strong>₹${totalPrice}</strong></div>
+        <button class="book-btn" data-hotel-id="${hotel.id}" data-hotel-name="${hotel.name}" data-hotel-price="${totalPrice}">Book Now</button>
+      </div>
+    `;
+
+    hotelList.appendChild(hotelCard);
+
+    setTimeout(() => {
+      hotelCard.style.opacity = '1';
+    }, 100);
+  });
+
+  document.querySelectorAll('.book-btn').forEach(button => {
+    button.addEventListener('click', function() {
+      const hotelName = this.getAttribute('data-hotel-name');
+      const hotelPrice = this.getAttribute('data-hotel-price');
+      showBookingConfirmation(destination, checkin, checkout, hotelName, hotelPrice);
+    });
+  });
+}
