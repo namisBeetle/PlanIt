@@ -24,3 +24,8 @@ const formatDate = date => {
 
 document.getElementById('checkin').min = formatDate(today);
 document.getElementById('checkout').min = formatDate(tomorrow);
+
+// Update price display when range slider changes
+priceRange.addEventListener('input', function() {
+  priceDisplay.textContent = this.value;
+});
