@@ -37,3 +37,23 @@ const hotels = [
   { id: 3, name: "Budget Stay", price: 9000, rating: 3.7, image: "https://placehold.co/300x150/e74c3c/ffffff?text=Budget+Stay" },
   // ... (continue adding all hotels)
 ];
+
+// Form submission handler
+tripForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const destination = document.getElementById('destination').value;
+  const checkin = document.getElementById('checkin').value;
+  const checkout = document.getElementById('checkout').value;
+  const guests = document.getElementById('guests').value;
+  const maxPrice = priceRange.value;
+
+  if (new Date(checkin) >= new Date(checkout)) {
+    alert("Check-out date must be after check-in date");
+    return;
+  }
+
+  const filteredHotels = hotels.filter(hotel => hotel.price <= maxPrice);
+
+  displayHotels(filteredHotels, destination, checkin, checkout, guests);
+});
