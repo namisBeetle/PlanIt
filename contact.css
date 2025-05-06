@@ -174,3 +174,56 @@ body {
   color: #666;
   animation: slideRight 0.6s 0.2s ease-out both;
 }
+/* Form Elements */
+.input-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+  animation: fadeIn 0.5s ease-out both;
+}
+
+.input-group:nth-child(1) { animation-delay: 0.2s; }
+.input-group:nth-child(2) { animation-delay: 0.3s; }
+.input-group:nth-child(3) { animation-delay: 0.4s; }
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s;
+  background-color: #f9f9f9;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #00bfa6;
+  box-shadow: 0 0 0 3px rgba(0, 191, 166, 0.2);
+  background-color: #fff;
+}
+
+.input-focus-effect {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #00bfa6;
+  transition: all 0.3s;
+  transform: translateX(-50%);
+}
+
+input:focus ~ .input-focus-effect,
+textarea:focus ~ .input-focus-effect {
+  width: 100%;
+}
