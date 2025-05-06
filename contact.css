@@ -366,3 +366,17 @@ button:hover::before {
 .hidden {
   display: none;
 }
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 1rem;
+  }
+  
+  .contact-container {
+    padding: 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+}
