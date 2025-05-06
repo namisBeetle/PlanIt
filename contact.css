@@ -227,3 +227,81 @@ input:focus ~ .input-focus-effect,
 textarea:focus ~ .input-focus-effect {
   width: 100%;
 }
+
+/* Button Styling */
+button {
+  background: linear-gradient(to right, #00bfa6, #00d4c0);
+  color: white;
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.5s 0.5s ease-out both;
+  width: 100%;
+}
+
+.btn-text {
+  position: relative;
+  z-index: 2;
+  font-weight: 500;
+}
+
+.btn-icon {
+  margin-left: 8px;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s;
+}
+
+button:hover {
+  box-shadow: 0 5px 15px rgba(0, 191, 166, 0.4);
+  transform: translateY(-2px);
+}
+
+button:hover .btn-icon {
+  transform: translateX(4px);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 191, 166, 0.4);
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+/* Loading Animation */
+.loading .btn-text {
+  visibility: hidden;
+}
+
+.loading::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.8s linear infinite;
+  z-index: 2;
+}
