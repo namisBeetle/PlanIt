@@ -56,3 +56,46 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 1500);
     });
   });
+  // Success Message Animation
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const successMessage = document.getElementById('successMessage');
+    
+    // This function would be called after successful form validation and submission
+    function showSuccessMessage() {
+      // Show success message with animation
+      form.style.opacity = '0';
+      form.style.transform = 'translateY(-20px)';
+      
+      setTimeout(() => {
+        form.style.display = 'none';
+        successMessage.classList.remove('hidden');
+        setTimeout(() => {
+          successMessage.classList.add('show');
+        }, 50);
+      }, 300);
+      
+      // Reset form after 5 seconds for demo purposes
+      setTimeout(() => {
+        successMessage.classList.remove('show');
+        
+        setTimeout(() => {
+          successMessage.classList.add('hidden');
+          form.style.display = 'block';
+          
+          setTimeout(() => {
+            form.style.opacity = '1';
+            form.style.transform = 'translateY(0)';
+            submitBtn.disabled = false;
+          }, 50);
+        }, 300);
+      }, 5000);
+    }
+    
+    // This would be integrated with the form submission handler
+    // For demonstration, we'll add a dummy trigger
+    if (false) { // This is just a placeholder, not actually executed
+      showSuccessMessage();
+    }
+  });
