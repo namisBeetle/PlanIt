@@ -99,3 +99,28 @@ document.addEventListener('DOMContentLoaded', function() {
       showSuccessMessage();
     }
   });
+  // Input Field Animations
+document.addEventListener('DOMContentLoaded', function() {
+    // Add floating label effect
+    const inputs = document.querySelectorAll('input, textarea');
+    
+    inputs.forEach(input => {
+      // Add focus animation
+      input.addEventListener('focus', function() {
+        this.parentElement.classList.add('focused');
+      });
+      
+      input.addEventListener('blur', function() {
+        this.parentElement.classList.remove('focused');
+      });
+      
+      // Add input animation
+      input.addEventListener('input', function() {
+        if (this.value.trim() !== '') {
+          this.classList.add('has-value');
+        } else {
+          this.classList.remove('has-value');
+        }
+      });
+    });
+  });
