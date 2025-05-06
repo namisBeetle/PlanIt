@@ -37,49 +37,49 @@ document.addEventListener('DOMContentLoaded', function() {
       name: "Luxury Palace Hotel",
       price: 21000,
       rating: 4.8,
-      image: "https://placehold.co/300x150/3498db/ffffff?text=Luxury+Palace"
+      image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/602436060.jpg?k=671ebe61142b366804ce53885e720111318458fb072e4fddd84f6907010d6e77&o=&hp=1"
     },
     {
       id: 2,
       name: "Comfort Inn",
       price: 18000,
       rating: 4.2,
-      image: "https://placehold.co/300x150/2ecc71/ffffff?text=Comfort+Inn"
+      image: "https://images.unsplash.com/photo-1743315713979-b46562f5f14e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       id: 3,
       name: "Budget Stay",
       price: 9000,
       rating: 3.7,
-      image: "https://placehold.co/300x150/e74c3c/ffffff?text=Budget+Stay"
+      image: "https://r1imghtlak.ibcdn.com/0d0898b5-022a-482f-a55b-e15f3a84e663.JPG?&downsize=330:180&crop=330:180;10,0&output-format=webp"
     },
     {
       id: 4,
       name: "Seaside Resort",
       price: 17000,
       rating: 4.5,
-      image: "https://placehold.co/300x150/9b59b6/ffffff?text=Seaside+Resort"
+      image: "https://images7.alphacoders.com/345/345182.jpg"
     },
     {
       id: 5,
       name: "Downtown Suites",
       price: 22000,
       rating: 4.3,
-      image: "https://placehold.co/300x150/f39c12/ffffff?text=Downtown+Suites"
+      image: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/608923581.jpg?k=ef65f3283573e379fe207dbc1dae2391e406aebde865a3f337c97f7008e67de6&o=&hp=1"
     },
     {
       id: 6,
       name: "Traveler's Rest",
       price: 1200,
       rating: 3.9,
-      image: "https://placehold.co/300x150/1abc9c/ffffff?text=Traveler's+Rest"
+      image: "https://images.squarespace-cdn.com/content/v1/612688c13b44c92890ffd835/1659040084519-LHGQ71S9E18I1W7M5OSJ/TRAVELERS_REST-4489.jpg?format=2500w"
     },
     {
       id: 7,
       name: "Mountain View Lodge",
       price: 15000,
       rating: 4.6,
-      image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=300&h=150&fit=crop"
+      image: "https://media.scurto.net/cdn-cgi/image/width=1280/2057/media/13321.jpg"
     },
     {
       id: 8,
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
       name: "Wilderness Retreat",
       price: 13500,
       rating: 4.2,
-      image: "https://images.unsplash.com/photo-1470165301023-58dab8118cc9?w=300&h=150&fit=crop"
+      image: "https://cdn.prod.website-files.com/65e2e78d061034866949e5e6/66a9e2b8c5e1d780431ba412_x21qbyt5i3wb4u3ht7i3gywyjqt6_1_r1AgW26-0cZPymR8M3yQtA.jpeg"
     },
     {
       id: 12,
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
       hotelCard.className = 'hotel-card';
       
       hotelCard.innerHTML = `
-        <div class="hotel-image" style="background-image: url('₹{hotel.image}')"></div>
+        <div class="hotel-image" style="background-image: url('${hotel.image}')"></div>
         <div class="hotel-info">
           <div class="hotel-name">${hotel.name}</div>
           <div class="hotel-price">₹${hotel.price} per night</div>
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <span style="color: #777">(${hotel.rating})</span>
           </div>
           <div class="hotel-total">Total for ${nights} nights: <strong>₹${totalPrice}</strong></div>
-          <button class="book-btn" data-hotel-id="₹{hotel.id}" data-hotel-name="${hotel.name}" data-hotel-price="${totalPrice}">Book Now</button>
+          <button class="book-btn" data-hotel-id="${hotel.id}" data-hotel-name="${hotel.name}" data-hotel-price="${totalPrice}">Book Now</button>
         </div>
       `;
       
@@ -211,7 +211,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add event listeners to book buttons
     document.querySelectorAll('.book-btn').forEach(button => {
       button.addEventListener('click', function() {
-                  const hotelName = this.getAttribute('data-hotel-name');
+        const hotelId = this.getAttribute('data-hotel-id');
+        const hotelName = this.getAttribute('data-hotel-name');
         const hotelPrice = this.getAttribute('data-hotel-price');
         
         // Show booking confirmation
