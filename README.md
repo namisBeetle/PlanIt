@@ -30,8 +30,8 @@ To run the website locally:
 Clone the repository:
 
 ```bash
-git clone [https://github.com/namis/PlanIt.git](https://github.com/namisBeetle/PlanIt.git)
-
+git clone https://github.com/namisBeetle/PlanIt.git
+```
 🛠️ Contributing
 Contributions are welcome! Open issues or submit pull requests to improve the project.
 
